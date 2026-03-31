@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="gateentry.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt">
+
+    <tnt:ToolPage>
+
+        <!-- 🔵 HEADER -->
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Title text="GFI Gate Entry" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" text="(GE-1110)"/>
+            </tnt:ToolHeader>
+        </tnt:header>
+
+        <!-- 🔵 SIDEBAR -->
+        <tnt:sideContent>
+            <tnt:SideNavigation>
+
+                <tnt:NavigationList>
+
+                    <tnt:NavigationListItem text="User Master" icon="sap-icon://employee"/>
+
+                    <tnt:NavigationListItem text="Create Gate Entry" icon="sap-icon://add" select="onNavToCreate"/>
+
+                    <tnt:NavigationListItem text="Search Gate Entry" icon="sap-icon://search" select="onNavToSearch"/>
+                    <tnt:NavigationListItem text="Report Gate Entry" icon="sap-icon://document-text" select="onNavToReport"/>
+
+                    <tnt:NavigationListItem text="Capture Weighment" icon="sap-icon://measure" select="onNavToWeighment"/>
+
+                    <tnt:NavigationListItem text="View RGP Report" icon="sap-icon://table-view"     select="onNavToRGPReport"/>
+
+                </tnt:NavigationList>
+
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+
+        <!-- 🔵 MAIN CONTENT -->
+        <tnt:mainContents>
+            <App id="app"/>
+        </tnt:mainContents>
+
+    </tnt:ToolPage>
+
+</mvc:View>

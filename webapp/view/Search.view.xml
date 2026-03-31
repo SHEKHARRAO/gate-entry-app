@@ -1,0 +1,98 @@
+<mvc:View controllerName="gateentry.controller.Search"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Gate Entry Index" class="sapUiContentPadding">
+
+        <content>
+
+            <HBox
+                justifyContent="Start"
+                alignItems="End"
+                wrap="Wrap"
+                class="sapUiSmallMargin">
+
+                <!-- Truck / Gate Entry -->
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="Truck | Gate Entry No."/>
+                    <Input value="{local>/SearchText}" placeholder="Search..." width="220px"/>
+                </VBox>
+
+                <!-- From Date -->
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="From Date"/>
+                    <DatePicker value="{local>/FromDate}" width="150px"/>
+                </VBox>
+
+                <!-- To Date -->
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="To Date"/>
+                    <DatePicker value="{local>/ToDate}" width="150px"/>
+                </VBox>
+
+                <!-- Gate Entry Type -->
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="Gate Entry Type"/>
+                    <Select selectedKey="{local>/GateEntryType}" width="160px">
+                        <items>
+                            <core:Item key="" text="--- SELECT ---"/>
+                            <core:Item key="IN" text="IN"/>
+                            <core:Item key="OUT" text="OUT"/>
+                        </items>
+                    </Select>
+                </VBox>
+
+                <!-- Status -->
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="Gate Entry Status"/>
+                    <Select selectedKey="{local>/Status}" width="150px">
+                        <items>
+                            <core:Item key="ALL" text="ALL"/>
+                            <core:Item key="OPEN" text="OPEN"/>
+                            <core:Item key="CLOSED" text="CLOSED"/>
+                        </items>
+                    </Select>
+                </VBox>
+
+                <!-- Execute -->
+                <VBox>
+                    <Label text=" "/>
+                    <Button text="EXECUTE" type="Emphasized" press="onSearch"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- 🔽 RESULT TABLE -->
+         <Table id="gateTable"
+    items="{/ZGTC_TGGATE_ENTRYRY}"
+    growing="true"
+    growingThreshold="10">
+
+    <columns>
+        <Column><Text text="Gate Entry No"/></Column>
+        <Column><Text text="PO No"/></Column>
+        <Column><Text text="Vendor"/></Column>
+        <Column><Text text="Vehicle"/></Column>
+        <Column><Text text="Date"/></Column>
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{GateEntryNo}"/>
+                <Text text="{PurchaseOrderNo}"/>
+                <Text text="{VendorName}"/>
+                <Text text="{VehicleNumber}"/>
+                <Text text="{path: 'ChallanDate', formatter: '.formatDate'}"/>
+            </cells>
+        </ColumnListItem>
+    </items>
+
+</Table>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

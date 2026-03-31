@@ -1,0 +1,140 @@
+<mvc:View controllerName="gateentry.controller.Report"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Gate Entry Report" class="sapUiContentPadding">
+
+        <content>
+
+            <Panel headerText="Gate Entry Report" class="sapUiResponsiveMargin">
+
+                <!-- 🔵 ROW 1 -->
+                <HBox wrap="Wrap" alignItems="End" class="sapUiSmallMarginBottom">
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Gate Entry From Date"/>
+                        <DatePicker value="{local>/FromDate}" width="180px"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Gate Entry To Date"/>
+                        <DatePicker value="{local>/ToDate}" width="180px"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="PO | DO | Vehicle Number"/>
+                        <Input value="{local>/SearchText}" placeholder="12345,12345.." width="220px"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Gate Entry Type"/>
+                        <Select selectedKey="{local>/GateEntryType}" width="180px">
+                            <items>
+                                <core:Item key="" text="--- SELECT ---"/>
+                                <core:Item key="IN" text="IN"/>
+                                <core:Item key="OUT" text="OUT"/>
+                            </items>
+                        </Select>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Gate Entry Status"/>
+                        <Select selectedKey="{local>/Status}" width="160px">
+                            <items>
+                                <core:Item key="ALL" text="ALL"/>
+                                <core:Item key="OPEN" text="OPEN"/>
+                                <core:Item key="CLOSED" text="CLOSED"/>
+                            </items>
+                        </Select>
+                    </VBox>
+
+                </HBox>
+
+                <!-- 🔵 ROW 2 -->
+                <HBox wrap="Wrap" alignItems="End">
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Search By Truck | GE Number"/>
+                        <Input value="{local>/GateEntryNo}" placeholder="Search Gate Entry..." width="220px"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Transporter"/>
+                        <Input value="{local>/Transporter}" placeholder="transporter code or name" width="220px"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Project"/>
+                        <Input value="{local>/Project}" placeholder="Search Project" width="200px"/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="WBS"/>
+                        <Input value="{local>/WBS}" placeholder="Search WBS Name" width="200px"/>
+                    </VBox>
+
+                    <!-- BUTTONS -->
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text=" "/>
+                        <Button text="FILTER" type="Emphasized" press="onFilter"/>
+                    </VBox>
+
+                    <VBox>
+                        <Label text=" "/>
+                        <Button text="EXPORT" type="Accept" press="onExport"/>
+                    </VBox>
+
+                </HBox>
+
+            </Panel>
+<Table items="{local>/results}" growing="true">
+
+    <columns>
+
+        <Column><Text text="Gate Entry No"/></Column>
+        <Column><Text text="PO No"/></Column>
+        <Column><Text text="Vendor"/></Column>
+        <Column><Text text="Vehicle"/></Column>
+        <Column><Text text="Transporter"/></Column>
+        <Column><Text text="Driver"/></Column>
+        <Column><Text text="LR No"/></Column>
+        <Column><Text text="Challan No"/></Column>
+        <Column><Text text="Gross Wt"/></Column>
+        <Column><Text text="Tare Wt"/></Column>
+        <Column><Text text="Net Wt"/></Column>
+        <Column><Text text="Freight"/></Column>
+        <Column><Text text="RGP Type"/></Column>
+        <Column><Text text="Status"/></Column>
+
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+
+                <Text text="{local>GateEntryNo}"/>
+                <Text text="{local>PurchaseOrderNo}"/>
+                <Text text="{local>VendorName}"/>
+                <Text text="{local>VehicleNumber}"/>
+                <Text text="{local>TransporterName}"/>
+                <Text text="{local>DriverName}"/>
+                <Text text="{local>LrNo}"/>
+                <Text text="{local>ChallanNo}"/>
+                <Text text="{local>ChallanGrossWt}"/>
+                <Text text="{local>ChallanTareWt}"/>
+                <Text text="{local>ChallanNetWt}"/>
+                <Text text="{local>FreightCondition}"/>
+                <Text text="{local>RgpType}"/>
+                <Text text="{local>Passing}"/>
+
+            </cells>
+        </ColumnListItem>
+    </items>
+
+</Table>
+        </content>
+
+    </Page>
+
+</mvc:View>

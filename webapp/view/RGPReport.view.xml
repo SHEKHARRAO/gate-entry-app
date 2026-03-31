@@ -1,0 +1,45 @@
+<mvc:View controllerName="gateentry.controller.RGPReport"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page title="Gate Entry RGP Report" class="sapUiContentPadding">
+
+        <content>
+
+            <Panel headerText="Gate Entry RGP Report" class="sapUiResponsiveMargin">
+
+                <HBox alignItems="End" wrap="Wrap" class="sapUiSmallMargin">
+
+                    <!-- From Date -->
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Gate Entry From Date"/>
+                        <DatePicker value="{local>/FromDate}" width="180px"/>
+                    </VBox>
+
+                    <!-- To Date -->
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Gate Entry To Date"/>
+                        <DatePicker value="{local>/ToDate}" width="180px"/>
+                    </VBox>
+
+                    <!-- Vendor -->
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Label text="Vendor"/>
+                        <Input value="{local>/Vendor}" placeholder="Search vendor" width="250px"/>
+                    </VBox>
+
+                    <!-- Filter Button -->
+                    <VBox>
+                        <Label text=" "/>
+                        <Button text="FILTER" type="Emphasized" press="onFilter"/>
+                    </VBox>
+
+                </HBox>
+
+            </Panel>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

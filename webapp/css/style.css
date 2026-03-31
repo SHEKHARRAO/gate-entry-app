@@ -1,0 +1,61 @@
+/* Header color */
+.sapMPageHeader {
+    background-color: #2f4a6d !important;
+    color: white !important;
+}
+
+/* Panel title */
+.sapMPanelHdr {
+    background-color: #d9d9d9 !important;
+    font-weight: bold;
+}
+
+/* Save button */
+.sapMBtnEmphasized {
+    background-color: #2f4a6d !important;
+    border-color: #2f4a6d !important;
+}
+.sapMPanelHdr {
+    background-color: #d9d9d9;
+    font-weight: bold;
+}
+
+.sapMPageHeader {
+    background-color: #2f4a6d;
+    color: white;
+}
+.sapMPanelHdr {
+    background-color: #d9d9d9 !important;
+    font-weight: bold;
+}
+
+.sapMBtnEmphasized {
+    background-color: #2f4a6d !important;
+    border-color: #2f4a6d !important;
+}
+
+.sapMBtnAccept {
+    background-color: #4CAF50 !important;
+    border-color: #4CAF50 !important;
+}
+/* Light blue strip */
+.weighmentHeader {
+    background-color: #cfd8e3;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+/* Search button color */
+.sapMBtnEmphasized {
+    background-color: #2f4a6d !important;
+    border-color: #2f4a6d !important;
+}
+.sapMPanelHdr {
+    background-color: #d9d9d9 !important;
+    font-weight: bold;
+}
+
+.sapMBtnEmphasized {
+    background-color: #2f4a6d !important;
+    border-color: #2f4a6d !important;
+}

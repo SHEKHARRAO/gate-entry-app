@@ -1,0 +1,140 @@
+<mvc:View
+    controllerName="gateentry.controller.Weighment"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+
+    <Page title="WEIGHMENT" class="sapUiContentPadding">
+
+        <content>
+
+            <!-- HEADER -->
+            <HBox justifyContent="Center" class="headerBar">
+                <Input value="{local>/GateEntryNo}" width="350px" placeholder="ENTER GATE ENTRY NO."/>
+                <Button text="SEARCH" press=".onSearch" class="searchBtn"/>
+            </HBox>
+
+            <!-- MAIN GRID -->
+            <l:Grid visible="{local>/showData}" defaultSpan="L3 M6 S12" hSpacing="1" vSpacing="1">
+
+                <VBox class="fieldBox"><Text text="Gate Entry Type :- Gate Entry Inward"/></VBox>
+                <VBox class="fieldBox"><Text text="Purchase Order No :- {data>/PoNo}"/></VBox>
+                <VBox class="fieldBox"><Text text="E-Way Bill Number :-"/></VBox>
+                <VBox class="fieldBox"><Text text="Delivery Order No :-"/></VBox>
+
+                <VBox class="fieldBox"><Text text="RGP Outward G.E. No :-"/></VBox>
+                <VBox class="fieldBox"><Text text="RGP Type :-"/></VBox>
+                <VBox class="fieldBox"><Text text="Vehicle Number :- {data>/Vehicle}"/></VBox>
+                <VBox class="fieldBox"><Text text="Transporter Name :-"/></VBox>
+
+                <VBox class="fieldBox"><Text text="Challan Number :- {data>/Challan}"/></VBox>
+                <VBox class="fieldBox"><Text text="Challan Date :- {data>/ChallanDate}"/></VBox>
+                <VBox class="fieldBox"><Text text="LR Number :-"/></VBox>
+                <VBox class="fieldBox"><Text text="LR Date :-"/></VBox>
+
+                <VBox class="fieldBox"><Text text="Challan Gross Weight :- {data>/Gross}"/></VBox>
+                <VBox class="fieldBox"><Text text="Challan Tare Weight :- {data>/Tare}"/></VBox>
+                <VBox class="fieldBox"><Text text="Challan Net Weight :- {data>/Net}"/></VBox>
+                <VBox class="fieldBox"><Text text="Project Name :-"/></VBox>
+
+                <VBox class="fieldBox"><Text text="Vendor Name :- {data>/Vendor}"/></VBox>
+                <VBox class="fieldBox"><Text text="Sold To Party :-"/></VBox>
+                <VBox class="fieldBox"><Text text="Ship To Party :-"/></VBox>
+                <VBox class="fieldBox"><Text text="Driver Name :-{data>/DriverName}"/></VBox>
+
+                <VBox class="fieldBox"><Text text="Driver Mobile Number :-"/></VBox>
+                <VBox class="fieldBox"><Text text="Driver License No :-"/></VBox>
+                <VBox class="fieldBox"><Text text="TP / RTP Number :-"/></VBox>
+                <VBox class="fieldBox"><Text text="Employee Name :-"/></VBox>
+
+                <VBox class="fieldBox"><Text text="Freight Amount :- {data>/Freight}"/></VBox>
+                <VBox class="fieldBox"><Text text="Due Date :-"/></VBox>
+                <VBox class="fieldBox"><Text text="Gross Weight :- {data>/Gross}"/></VBox>
+                <VBox class="fieldBox"><Text text="Tare Weight :- {data>/Tare}"/></VBox>
+
+            </l:Grid>
+
+            <!-- SECOND ROW -->
+            <l:Grid visible="{local>/showData}" defaultSpan="L4 M6 S12" class="sapUiSmallMarginTop">
+
+                <VBox class="fieldBox">
+                    <Text text="Passing Weight :- 0"/>
+                </VBox>
+
+                <HBox class="fieldBox" alignItems="Center" justifyContent="SpaceBetween">
+                    <Text text="Vehicle Type :-"/>
+                    <Select width="160px">
+                        <items>
+                            <core:Item text="--- SELECT ---"/>
+                        </items>
+                    </Select>
+                </HBox>
+
+                <VBox class="fieldBox">
+                    <Text text="WBS Name :-"/>
+                </VBox>
+
+            </l:Grid>
+
+            <!-- REMARK -->
+            <VBox visible="{local>/showData}" class="fieldBox sapUiSmallMarginTop">
+                <Text text="Remark :-"/>
+            </VBox>
+
+            <!-- ACTION BAR -->
+            <HBox visible="{local>/showData}" justifyContent="SpaceBetween" class="sapUiMediumMarginTop">
+
+                <Button text="GROSS WEIGHT" class="grossBtn"/>
+
+                <HBox alignItems="Center">
+                    <Text text="WEIGHT :" class="sapUiSmallMarginEnd"/>
+                    <Text text="{data>/Weight}" class="weightRed"/>
+                    <Text text="KG" class="sapUiSmallMarginBegin"/>
+                    <Button text="CAPTURE WEIGHT" class="captureBtn sapUiSmallMarginBegin"/>
+                </HBox>
+
+            </HBox>
+
+            <!-- TABLE -->
+            <Table visible="{local>/showData}" items="{data>/Items}" class="sapUiSmallMarginTop">
+
+                <columns>
+                    <Column><Text text="S.No."/></Column>
+                    <Column><Text text="Item No."/></Column>
+                    <Column><Text text="Material Code"/></Column>
+                    <Column><Text text="Material Description"/></Column>
+                    <Column><Text text="Order Qty"/></Column>
+                    <Column><Text text="Qty"/></Column>
+                    <Column><Text text="TOL %"/></Column>
+                    <Column><Text text="UOM"/></Column>
+                    <Column><Text text="Gross Wt."/></Column>
+                    <Column><Text text="Tare Wt."/></Column>
+                    <Column><Text text="Net Wt."/></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{Sno}"/>
+                            <Text text="{ItemNo}"/>
+                            <Text text="{MatCode}"/>
+                            <Text text="{Desc}"/>
+                            <Text text="{OrderQty}"/>
+                            <Text text="{Qty}"/>
+                            <Text text="{Tol}"/>
+                            <Text text="{UOM}"/>
+                            <Text text="{Gross}"/>
+                            <Text text="{Tare}"/>
+                            <Text text="{Net}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

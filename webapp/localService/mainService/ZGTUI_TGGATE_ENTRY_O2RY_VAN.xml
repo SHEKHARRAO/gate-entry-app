@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zgtui_tggate_entry_o2ry/$metadata">
+        <edmx:Include Namespace="cds_zgtui_tggate_entry_o4ry" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zgtui_tggate_entry_o2ry_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/InProcessByUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType/HasDraftEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType/DraftEntityCreationDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType/DraftEntityLastChangeDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType/HasActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType/IsActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType/Edit_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.ZGTC_TGGATE_ENTRYRYType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="ID" String="GeneralInfo"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="###GENERATED Core Data Service Entity"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="GateEntryNo"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="GateEntryNo"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                    <Annotation Term="Core.Messages">
+                        <Collection>
+                            <Record>
+                                <PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/>
+                                <PropertyValue Property="severity" String="error"/>
+                            </Record>
+                        </Collection>
+                    </Annotation>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="GateEntryNo"/>
+                            <PropertyValue Property="Value" Path="GateEntryNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="GateEntryType"/>
+                            <PropertyValue Property="Value" Path="GateEntryType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PurchaseOrderNo"/>
+                            <PropertyValue Property="Value" Path="PurchaseOrderNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="VendorCode"/>
+                            <PropertyValue Property="Value" Path="VendorCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="VendorName"/>
+                            <PropertyValue Property="Value" Path="VendorName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DeliveryOrderNo"/>
+                            <PropertyValue Property="Value" Path="DeliveryOrderNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="SoldToParty"/>
+                            <PropertyValue Property="Value" Path="SoldToParty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="SoldToPartyName"/>
+                            <PropertyValue Property="Value" Path="SoldToPartyName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ShipToParty"/>
+                            <PropertyValue Property="Value" Path="ShipToParty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ShipToPartyName"/>
+                            <PropertyValue Property="Value" Path="ShipToPartyName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="VehicleNumber"/>
+                            <PropertyValue Property="Value" Path="VehicleNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TransporterCode"/>
+                            <PropertyValue Property="Value" Path="TransporterCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TransporterName"/>
+                            <PropertyValue Property="Value" Path="TransporterName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DriverName"/>
+                            <PropertyValue Property="Value" Path="DriverName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DriverMobileNo"/>
+                            <PropertyValue Property="Value" Path="DriverMobileNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DriverLicenseNo"/>
+                            <PropertyValue Property="Value" Path="DriverLicenseNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="LrNo"/>
+                            <PropertyValue Property="Value" Path="LrNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="LrDate"/>
+                            <PropertyValue Property="Value" Path="LrDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TpNo"/>
+                            <PropertyValue Property="Value" Path="TpNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Remark"/>
+                            <PropertyValue Property="Value" Path="Remark"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PartyName"/>
+                            <PropertyValue Property="Value" Path="PartyName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ContainerNumber"/>
+                            <PropertyValue Property="Value" Path="ContainerNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="FreightCondition"/>
+                            <PropertyValue Property="Value" Path="FreightCondition"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RgpType"/>
+                            <PropertyValue Property="Value" Path="RgpType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RgpOutwardGeNo"/>
+                            <PropertyValue Property="Value" Path="RgpOutwardGeNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="EWayBill"/>
+                            <PropertyValue Property="Value" Path="EWayBill"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="WbFirst"/>
+                            <PropertyValue Property="Value" Path="WbFirst"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="FirstWtBy"/>
+                            <PropertyValue Property="Value" Path="FirstWtBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="EmpName"/>
+                            <PropertyValue Property="Value" Path="EmpName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DueDate"/>
+                            <PropertyValue Property="Value" Path="DueDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Passing"/>
+                            <PropertyValue Property="Value" Path="Passing"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LastChangedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LastChangedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalLastChangedAt"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="GateEntryNo"/>
+                            <PropertyValue Property="Value" Path="GateEntryNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="GateEntryType"/>
+                            <PropertyValue Property="Value" Path="GateEntryType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PurchaseOrderNo"/>
+                            <PropertyValue Property="Value" Path="PurchaseOrderNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="VendorCode"/>
+                            <PropertyValue Property="Value" Path="VendorCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="VendorName"/>
+                            <PropertyValue Property="Value" Path="VendorName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DeliveryOrderNo"/>
+                            <PropertyValue Property="Value" Path="DeliveryOrderNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="SoldToParty"/>
+                            <PropertyValue Property="Value" Path="SoldToParty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="SoldToPartyName"/>
+                            <PropertyValue Property="Value" Path="SoldToPartyName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ShipToParty"/>
+                            <PropertyValue Property="Value" Path="ShipToParty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ShipToPartyName"/>
+                            <PropertyValue Property="Value" Path="ShipToPartyName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="VehicleNumber"/>
+                            <PropertyValue Property="Value" Path="VehicleNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TransporterCode"/>
+                            <PropertyValue Property="Value" Path="TransporterCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TransporterName"/>
+                            <PropertyValue Property="Value" Path="TransporterName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DriverName"/>
+                            <PropertyValue Property="Value" Path="DriverName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DriverMobileNo"/>
+                            <PropertyValue Property="Value" Path="DriverMobileNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DriverLicenseNo"/>
+                            <PropertyValue Property="Value" Path="DriverLicenseNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="LrNo"/>
+                            <PropertyValue Property="Value" Path="LrNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="LrDate"/>
+                            <PropertyValue Property="Value" Path="LrDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TpNo"/>
+                            <PropertyValue Property="Value" Path="TpNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Remark"/>
+                            <PropertyValue Property="Value" Path="Remark"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PartyName"/>
+                            <PropertyValue Property="Value" Path="PartyName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ContainerNumber"/>
+                            <PropertyValue Property="Value" Path="ContainerNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="FreightCondition"/>
+                            <PropertyValue Property="Value" Path="FreightCondition"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RgpType"/>
+                            <PropertyValue Property="Value" Path="RgpType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RgpOutwardGeNo"/>
+                            <PropertyValue Property="Value" Path="RgpOutwardGeNo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="EWayBill"/>
+                            <PropertyValue Property="Value" Path="EWayBill"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="WbFirst"/>
+                            <PropertyValue Property="Value" Path="WbFirst"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="FirstWtBy"/>
+                            <PropertyValue Property="Value" Path="FirstWtBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="EmpName"/>
+                            <PropertyValue Property="Value" Path="EmpName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DueDate"/>
+                            <PropertyValue Property="Value" Path="DueDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Passing"/>
+                            <PropertyValue Property="Value" Path="Passing"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LastChangedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LastChangedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LocalLastChangedAt"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>GateEntryNo</PropertyPath>
+                        <PropertyPath>GateEntryType</PropertyPath>
+                        <PropertyPath>PurchaseOrderNo</PropertyPath>
+                        <PropertyPath>VendorCode</PropertyPath>
+                        <PropertyPath>VendorName</PropertyPath>
+                        <PropertyPath>DeliveryOrderNo</PropertyPath>
+                        <PropertyPath>SoldToParty</PropertyPath>
+                        <PropertyPath>SoldToPartyName</PropertyPath>
+                        <PropertyPath>ShipToParty</PropertyPath>
+                        <PropertyPath>ShipToPartyName</PropertyPath>
+                        <PropertyPath>VehicleNumber</PropertyPath>
+                        <PropertyPath>TransporterCode</PropertyPath>
+                        <PropertyPath>TransporterName</PropertyPath>
+                        <PropertyPath>DriverName</PropertyPath>
+                        <PropertyPath>DriverMobileNo</PropertyPath>
+                        <PropertyPath>DriverLicenseNo</PropertyPath>
+                        <PropertyPath>LrNo</PropertyPath>
+                        <PropertyPath>LrDate</PropertyPath>
+                        <PropertyPath>TpNo</PropertyPath>
+                        <PropertyPath>Remark</PropertyPath>
+                        <PropertyPath>PartyName</PropertyPath>
+                        <PropertyPath>ContainerNumber</PropertyPath>
+                        <PropertyPath>FreightCondition</PropertyPath>
+                        <PropertyPath>RgpType</PropertyPath>
+                        <PropertyPath>RgpOutwardGeNo</PropertyPath>
+                        <PropertyPath>EWayBill</PropertyPath>
+                        <PropertyPath>WbFirst</PropertyPath>
+                        <PropertyPath>FirstWtBy</PropertyPath>
+                        <PropertyPath>EmpName</PropertyPath>
+                        <PropertyPath>DueDate</PropertyPath>
+                        <PropertyPath>Passing</PropertyPath>
+                        <PropertyPath>CreatedBy</PropertyPath>
+                        <PropertyPath>CreatedAt</PropertyPath>
+                        <PropertyPath>LastChangedBy</PropertyPath>
+                        <PropertyPath>LastChangedAt</PropertyPath>
+                        <PropertyPath>LocalLastChangedAt</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zgtui_tggate_entry_o4ry.cds_zgtui_tggate_entry_o4ry_Entities">
+                <Annotation Term="UI.LeadingEntitySet" String="ZGTC_TGGATE_ENTRYRY"/>
+            </Annotations>
+            <Annotations Target="_Entities"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

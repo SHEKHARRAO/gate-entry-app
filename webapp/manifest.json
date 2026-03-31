@@ -1,0 +1,173 @@
+{
+  "_version": "1.80.0",
+  "sap.app": {
+    "id": "gateentry",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.21.0",
+      "toolsId": "b3ac4a69-351e-48af-a3ed-77b3adc26cf6"
+    },
+    "dataSources": {
+      "ZGTUI_TGGATE_ENTRY_O2RY_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZGTUI_TGGATE_ENTRY_O2RY_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/ZGTUI_TGGATE_ENTRY_O2RY_VAN.xml"
+        }
+      },
+   "poService": {
+  "uri": "/sap_po/sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/",
+  "type": "OData",
+  "settings": {
+    "odataVersion": "2.0"
+  }
+},
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZGTUI_TGGATE_ENTRY_O2RY/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZGTUI_TGGATE_ENTRY_O2RY_VAN"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.142.7",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "poModel": {
+  "dataSource": "poService",
+  "type": "sap.ui.model.odata.v2.ODataModel",
+  "settings": {
+    "useBatch": false
+  }
+},
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "gateentry.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "gateentry.view",
+        "async": true,
+        "viewPath": "gateentry.view"
+      },
+       "routes": [
+    {
+      "name": "RouteView1",
+      "pattern": "",
+      "target": "TargetView1"
+    },
+    {
+      "name": "RouteSearch",
+      "pattern": "search",
+      "target": "TargetSearch"
+    },
+    {
+  "name": "RouteReport",
+  "pattern": "report",
+  "target": "TargetReport"
+},
+{
+  "name": "RouteWeighment",
+  "pattern": "weighment",
+  "target": "TargetWeighment"
+},
+{
+  "name": "RouteRGPReport",
+  "pattern": "rgpreport",
+  "target": "TargetRGPReport"
+}
+  ],
+
+  "targets": {
+    "TargetView1": {
+      "viewName": "View1",
+      "viewId": "View1"
+    },
+    "TargetSearch": {
+      "viewName": "Search",
+      "viewId": "Search"
+    },
+    "TargetReport": {
+  "viewName": "Report",
+  "viewId": "Report"
+},
+"TargetWeighment": {
+  "viewName": "Weighment",
+  "viewId": "Weighment"
+},
+"TargetRGPReport": {
+  "viewName": "RGPReport",
+  "viewId": "RGPReport"
+}
+  }
+    },
+    "rootView": {
+      "viewName": "gateentry.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

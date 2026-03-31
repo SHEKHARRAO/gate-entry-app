@@ -1,0 +1,157 @@
+<mvc:View controllerName="gateentry.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Gate Entry Form" class="sapUiContentPadding">
+
+        <content>
+
+            <Panel headerText="Gate Entry Form">
+
+                <l:Grid defaultSpan="L6 M6 S12" hSpacing="2" vSpacing="1">
+
+                    <!-- LEFT COLUMN -->
+                    <VBox>
+
+                        <Label text="Gate Entry Type"/>
+                        <Select selectedKey="{local>/GateEntryType}">
+                            <items>
+                                <core:Item key="" text="--- SELECT ---"/>
+                                <core:Item key="IN" text="IN"/>
+                                <core:Item key="OUT" text="OUT"/>
+                            </items>
+                        </Select>
+
+                        <Label text="Purchase Order No"/>
+<Input
+    id="poNumber"
+    placeholder="Enter PO No"
+    change="onPOChange" />
+
+                        <Label text="E-Way Bill"/>
+                        <Input value="{local>/EWayBill}"/>
+
+                        <Label text="Delivery Order No"/>
+                        <Input value="{local>/DeliveryOrderNo}"/>
+
+                        <Label text="RGP Outward G.E No"/>
+                        <Input value="{local>/RgpOutwardGeNo}"/>
+
+                        <Label text="RGP Type"/>
+                        <Input value="{local>/RgpType}"/>
+
+                        <Label text="Vehicle Number"/>
+                        <Input value="{local>/VehicleNumber}"/>
+
+                        <Label text="Transporter Name"/>
+                        <Input value="{local>/TransporterName}"/>
+
+                        <Label text="Challan Number"/>
+                        <Input value="{local>/ChallanNo}"/>
+
+                        <Label text="Challan Date"/>
+                        <DatePicker value="{local>/ChallanDate}"
+                            valueFormat="yyyy-MM-dd"
+                            displayFormat="dd-MM-yyyy"/>
+
+                        <Label text="LR Number"/>
+                        <Input value="{local>/LrNo}"/>
+
+                        <Label text="LR Date"/>
+                        <DatePicker value="{local>/LrDate}"
+                            valueFormat="yyyy-MM-dd"
+                            displayFormat="dd-MM-yyyy"/>
+
+                        <Label text="Challan Gross Weight"/>
+                        <Input value="{local>/ChallanGrossWt}" type="Number"/>
+
+                        <Label text="Challan Tare Weight"/>
+                        <Input value="{local>/ChallanTareWt}" type="Number"/>
+
+                        <Label text="Challan Net Weight"/>
+                        <Input value="{local>/ChallanNetWt}" type="Number"/>
+                         <Label text="Driver Name"/>
+                        <Input value="{local>/DriverName}"/>
+
+                        <Label text="Driver Mobile"/>
+                        <Input value="{local>/DriverMobileNo}" type="Tel"/>
+
+                        <Label text="Driver License"/>
+                        <Input value="{local>/DriverLicenseNo}"/>
+
+                    </VBox>
+
+                    <!-- RIGHT COLUMN -->
+                    <VBox>
+
+                        <Label text="Vendor Code"/>
+                        <Input value="{local>/VendorCode}"/>
+
+                        <Label text="Vendor Name"/>
+                        <Input value="{local>/VendorName}"/>
+
+                        <Label text="Sold To Party"/>
+                        <Input value="{local>/SoldToParty}"/>
+
+                        <Label text="Sold To Party Name"/>
+                        <Input value="{local>/SoldToPartyName}"/>
+
+                        <Label text="Ship To Party"/>
+                        <Input value="{local>/ShipToParty}"/>
+
+                        <Label text="Ship To Party Name"/>
+                        <Input value="{local>/ShipToPartyName}"/>
+
+                        <Label text="Transporter Code"/>
+                        <Input value="{local>/TransporterCode}"/>
+
+                        <Label text="TP Number"/>
+                        <Input value="{local>/TpNo}"/>
+
+                        <Label text="Employee Name"/>
+                        <Input value="{local>/EmpName}"/>
+
+                        <Label text="Freight Condition"/>
+                        <Input value="{local>/FreightCondition}"/>
+
+                        <Label text="Remark"/>
+                        <Input value="{local>/Remark}"/>
+
+                        <Label text="Party Name"/>
+                        <Input value="{local>/PartyName}"/>
+
+                        <Label text="Container Number"/>
+                        <Input value="{local>/ContainerNumber}"/>
+
+                        <Label text="WB First"/>
+                        <Input value="{local>/WbFirst}"/>
+
+                        <Label text="First Weight By"/>
+                        <Input value="{local>/FirstWtBy}"/>
+
+                        <Label text="Passing"/>
+                        <Input value="{local>/Passing}"/>
+
+                        <Label text="Due Date"/>
+                        <DatePicker value="{local>/DueDate}"
+                            valueFormat="yyyy-MM-dd"
+                            displayFormat="dd-MM-yyyy"/>
+
+                    </VBox>
+
+                </l:Grid>
+
+            </Panel>
+
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Save" type="Emphasized" press="onSave"/>
+            </Toolbar>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
