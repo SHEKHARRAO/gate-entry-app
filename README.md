@@ -20,6 +20,10 @@
 
 An SAP Fiori application.
 
+##REF_IMAGES
+<img width="1916" height="916" alt="Screenshot 2026-04-10 125021" src="https://github.com/user-attachments/assets/ccf1d2b6-720d-4e4b-af96-8712bb1c6370" />
+
+
 ### Starting the generated app
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  To launch the generated application, run the following from the generated application root folder:
