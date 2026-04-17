@@ -27,14 +27,17 @@
                         <Label text="Purchase Order No"/>
 <Input
     id="poNumber"
-    placeholder="Enter PO No"
-    change="onPOChange" />
+    placeholder="Enter PO Number"
+    change="onPOChange"/>
 
                         <Label text="E-Way Bill"/>
                         <Input value="{local>/EWayBill}"/>
 
-                        <Label text="Delivery Order No"/>
-                        <Input value="{local>/DeliveryOrderNo}"/>
+                      <Label text="Delivery Order No"/>
+<Input  id="doNumber"
+    placeholder="Enter DO Number"
+    change="onDOChange"/>
+
 
                         <Label text="RGP Outward G.E No"/>
                         <Input value="{local>/RgpOutwardGeNo}"/>
@@ -144,7 +147,45 @@
                 </l:Grid>
 
             </Panel>
+<Table id="itemTable" items="{local>/Items}" headerText="Item Details" class="sapUiSmallMarginTop">
+    <headerToolbar>
+        <OverflowToolbar>
+            <Title text="Item Details"/>
+            <ToolbarSpacer/>
+            <Button text="ADD" type="Emphasized" press="onAddItem"/>
+        </OverflowToolbar>
+    </headerToolbar>
 
+    <columns>
+        <Column width="3rem"><Text text="S.No."/></Column>
+        <Column><Text text="Item No."/></Column>
+        <Column><Text text="Material"/></Column>
+        <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Material Description"/></Column>
+        <Column hAlign="End"><Text text="Order Qty"/></Column>
+        <Column hAlign="End"><Text text="Qty"/></Column>
+        <Column width="4rem"><Text text="UOM"/></Column>
+        <Column hAlign="End"><Text text="Rate"/></Column>
+        <Column><Text text="Batch No"/></Column>
+        <Column width="3rem"/> <!-- Delete -->
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{local>SNo}"/>
+                <Input value="{local>item_no}"/>
+                <Input value="{local>material}" showValueHelp="true"/>
+                <Input value="{local>material_desc}"/>
+                <Input value="{local>order_qty}" type="Number"/>
+                <Input value="{local>quantity}" type="Number"/>
+                <Input value="{local>uom}"/>
+                <Input value="{local>rate}" type="Number"/>
+                <Input value="{local>batch_no}"/>
+                <Button icon="sap-icon://delete" type="Transparent" press="onDeleteItem"/>
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
             <Toolbar>
                 <ToolbarSpacer/>
                 <Button text="Save" type="Emphasized" press="onSave"/>

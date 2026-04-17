@@ -101,7 +101,52 @@ sap.ui.define([
                 }
 
             });
-        }
+        },
+      onOpenDialog: function (oEvent) {
+
+    var oContext = oEvent.getSource().getBindingContext();
+    this._selectedData = oContext.getObject();   // 🔥 STORE DATA
+
+    this.byId("moreOptionDialog").open();
+},
+
+onPrintPress: function (oEvent) {
+
+    var oContext = oEvent.getSource().getBindingContext();
+    var oData = oContext.getObject();
+
+    var oModel = new sap.ui.model.json.JSONModel(oData);
+    this.getView().setModel(oModel, "print");
+
+    this.byId("printDialog").open();
+},
+
+onPrintNow: function () {
+
+    var sHtml = this.byId("printArea").getDomRef().innerHTML;
+
+    var win = window.open("", "", "width=800,height=600");
+    win.document.write("<html><body>");
+    win.document.write(sHtml);
+    win.document.write("</body></html>");
+    win.document.close();
+
+    win.print();
+},
+
+onClosePrint: function () {
+    this.byId("printDialog").close();
+},
+
+formatDateTime: function (val) {
+    if (!val) return "";
+    return new Date(val).toLocaleString();
+},
+
+onCloseDialog: function () {
+    this.byId("moreOptionDialog").close();
+},
+
 
     });
 });

@@ -59,3 +59,70 @@
     background-color: #2f4a6d !important;
     border-color: #2f4a6d !important;
 }
+.sapMDialog .sapMBtn {
+    background-color: #3b4f6a !important;
+    color: white !important;
+    border-radius: 6px;
+}
+
+/* FULL BACKGROUND */
+.loginContainer {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/bg.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* LOGIN BOX */
+.loginBox {
+    width: 350px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* HEADER */
+.loginHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loginTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.loginSubTitle {
+    font-size: 12px;
+    color: gray;
+}
+
+/* FORM */
+.loginLabel {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.loginInput {
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+.loginButton {
+    margin-top: 15px;
+    background: linear-gradient(to right, #2c4a7a, #1f2d3d);
+    color: white;
+    border-radius: 5px;
+}
+
+.loginContainer {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/GATEENTRY3.png") no-repeat center center;
+    background-size: cover;
+}

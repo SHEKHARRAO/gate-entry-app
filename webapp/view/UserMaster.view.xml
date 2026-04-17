@@ -1,0 +1,175 @@
+<mvc:View
+    controllerName="gateentry.controller.UserMaster"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+<Page title="USER LIST" class="sapUiContentPadding">
+
+    <!-- ADD BUTTON -->
+    <headerContent>
+        <Button icon="sap-icon://add" type="Emphasized" press="onAddUser"/>
+    </headerContent>
+
+    <content>
+
+        <Table
+            id="userTable"
+            items="{local>/Users}"
+            growing="true"
+            growingThreshold="20">
+
+            <columns>
+
+                <Column width="6rem"/>
+                <Column><Text text="First Name"/></Column>
+                <Column><Text text="Last Name"/></Column>
+                <Column><Text text="User ID"/></Column>
+                <Column><Text text="Plant"/></Column>
+                <Column><Text text="Home Url"/></Column>
+                <Column><Text text="Allow Login"/></Column>
+                <Column><Text text="User Access"/></Column>
+                <Column><Text text="Cancel Truck"/></Column>
+                <Column><Text text="Out Truck"/></Column>
+                <Column><Text text="Create Gate Entry"/></Column>
+                <Column><Text text="Edit Gate Entry"/></Column>
+                <Column><Text text="Created By"/></Column>
+                <Column><Text text="Created Date"/></Column>
+
+            </columns>
+
+            <items>
+                <ColumnListItem>
+
+                    <cells>
+
+                        <!-- EDIT BUTTON -->
+                        <Button text="EDIT" press="onEditUser"/>
+
+                        <Text text="{local>FirstName}"/>
+                        <Text text="{local>LastName}"/>
+                        <Text text="{local>UserId}"/>
+                        <Text text="{local>Plant}"/>
+                        <Text text="{local>HomeUrl}"/>
+
+                        <!-- CHECKBOXES -->
+                        <CheckBox selected="{local>AllowLogin}"/>
+                        <CheckBox selected="{local>UserAccess}"/>
+                        <CheckBox selected="{local>CancelTruck}"/>
+                        <CheckBox selected="{local>OutTruck}"/>
+                        <CheckBox selected="{local>CreateGateEntry}"/>
+                        <CheckBox selected="{local>EditGateEntry}"/>
+
+                        <Text text="{local>CreatedBy}"/>
+                        <Text text="{path:'local>CreatedDate', formatter:'.formatDateTime'}"/>
+
+                    </cells>
+
+                </ColumnListItem>
+            </items>
+
+        </Table>
+<Dialog id="userDialog" title="UPDATE USER" class="sapUiContentPadding">
+
+    <customHeader>
+        <Bar>
+            <contentLeft>
+                <Text text="UPDATE USER"/>
+            </contentLeft>
+            <contentRight>
+                <Button text="X" type="Reject" press="onCloseUserDialog"/>
+            </contentRight>
+        </Bar>
+    </customHeader>
+
+    <content>
+
+        <VBox class="sapUiSmallMargin">
+
+            <HBox justifyContent="SpaceBetween">
+
+                <!-- LEFT -->
+                <VBox width="48%">
+                    <Label text="First Name"/>
+                    <Input value="{user>FirstName}"/>
+
+                    <Label text="User Name"/>
+                    <Input value="{user>UserId}"/>
+
+                    <Label text="Plant"/>
+                    <Select selectedKey="{user>Plant}">
+                        <items>
+                            <core:Item key="3110" text="3110"/>
+                            <core:Item key="1120" text="1120"/>
+                        </items>
+                    </Select>
+
+                    <Label text="Account"/>
+                    <Select selectedKey="{user>AllowLogin}">
+                        <items>
+                            <core:Item key="true" text="Enable"/>
+                            <core:Item key="false" text="Disable"/>
+                        </items>
+                    </Select>
+
+                    <Label text="Search Permission"/>
+                    <Select selectedKey="{user>UserAccess}">
+                        <items>
+                            <core:Item key="true" text="Yes"/>
+                            <core:Item key="false" text="No"/>
+                        </items>
+                    </Select>
+
+                </VBox>
+
+                <!-- RIGHT -->
+                <VBox width="48%">
+                    <Label text="Last Name"/>
+                    <Input value="{user>LastName}"/>
+
+                    <Label text="Password"/>
+                    <Input type="Password"/>
+
+                    <Label text="Module"/>
+                    <Select selectedKey="{user>HomeUrl}">
+                        <items>
+                            <core:Item key="GATE ENTRY" text="GATE ENTRY"/>
+                        </items>
+                    </Select>
+
+                    <Label text="Truck Cancel"/>
+                    <Select selectedKey="{user>CancelTruck}">
+                        <items>
+                            <core:Item key="true" text="Yes"/>
+                            <core:Item key="false" text="No"/>
+                        </items>
+                    </Select>
+
+                    <Label text="Truck Out"/>
+                    <Select selectedKey="{user>OutTruck}">
+                        <items>
+                            <core:Item key="true" text="Yes"/>
+                            <core:Item key="false" text="No"/>
+                        </items>
+                    </Select>
+
+                </VBox>
+
+            </HBox>
+
+            <Button text="UPDATE"
+                type="Emphasized"
+                press="onSaveUser"
+                class="sapUiMediumMarginTop"/>
+
+        </VBox>
+
+    </content>
+
+</Dialog>
+
+
+    </content>
+
+</Page>
+</mvc:View>

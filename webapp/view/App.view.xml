@@ -7,37 +7,39 @@
     <tnt:ToolPage>
 
         <!-- 🔵 HEADER -->
-        <tnt:header>
+        <tnt:header visible="{session>/loggedIn}">
             <tnt:ToolHeader>
                 <Title text="GFI Gate Entry" level="H2"/>
                 <ToolbarSpacer/>
-                <Button icon="sap-icon://log" text="(GE-1110)"/>
+                <Button icon="sap-icon://log"
+                    text="({session>/user/FirstName})"/>
             </tnt:ToolHeader>
         </tnt:header>
 
         <!-- 🔵 SIDEBAR -->
-        <tnt:sideContent>
-            <tnt:SideNavigation>
+        <tnt:sideContent visible="{session>/loggedIn}">
+            <tnt:SideNavigation visible="{session>/loggedIn}">
 
                 <tnt:NavigationList>
 
-                    <tnt:NavigationListItem text="User Master" icon="sap-icon://employee"/>
+                    <tnt:NavigationListItem text="User Master" icon="sap-icon://employee" select="onNavToUserMaster"/>
 
                     <tnt:NavigationListItem text="Create Gate Entry" icon="sap-icon://add" select="onNavToCreate"/>
 
                     <tnt:NavigationListItem text="Search Gate Entry" icon="sap-icon://search" select="onNavToSearch"/>
+
                     <tnt:NavigationListItem text="Report Gate Entry" icon="sap-icon://document-text" select="onNavToReport"/>
 
                     <tnt:NavigationListItem text="Capture Weighment" icon="sap-icon://measure" select="onNavToWeighment"/>
 
-                    <tnt:NavigationListItem text="View RGP Report" icon="sap-icon://table-view"     select="onNavToRGPReport"/>
+                    <tnt:NavigationListItem text="View RGP Report" icon="sap-icon://table-view" select="onNavToRGPReport"/>
 
                 </tnt:NavigationList>
 
             </tnt:SideNavigation>
         </tnt:sideContent>
 
-        <!-- 🔵 MAIN CONTENT -->
+        <!-- 🔵 MAIN CONTENT (ALWAYS VISIBLE) -->
         <tnt:mainContents>
             <App id="app"/>
         </tnt:mainContents>

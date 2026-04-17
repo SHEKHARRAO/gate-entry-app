@@ -64,33 +64,184 @@
             </HBox>
 
             <!-- 🔽 RESULT TABLE -->
-         <Table id="gateTable"
+        <Table id="gateTable"
     items="{/ZGTC_TGGATE_ENTRYRY}"
     growing="true"
-    growingThreshold="10">
+    growingThreshold="100"
+    class="sapUiSmallMarginTop">
 
     <columns>
+
+        <!-- Action Column -->
+        <Column width="3rem"/>
+        
+        <Column><Text text="Gate Entry Type"/></Column>
+        <Column><Text text="PO/SO Document"/></Column>
         <Column><Text text="Gate Entry No"/></Column>
-        <Column><Text text="PO No"/></Column>
-        <Column><Text text="Vendor"/></Column>
-        <Column><Text text="Vehicle"/></Column>
-        <Column><Text text="Date"/></Column>
+        <Column><Text text="Truck Status"/></Column>
+        <Column><Text text="Vehicle Number"/></Column>
+        <Column><Text text="Party Name"/></Column>
+        <Column><Text text="Entry Time"/></Column>
+
     </columns>
 
     <items>
         <ColumnListItem>
+
             <cells>
-                <Text text="{GateEntryNo}"/>
+
+                <!-- Action Button -->
+                <Button icon="sap-icon://menu2" type="Transparent" press="onOpenDialog"/>
+
+                <!-- Existing fields -->
+                <Text text="{GateEntryType}"/>
                 <Text text="{PurchaseOrderNo}"/>
-                <Text text="{VendorName}"/>
+                <Text text="{GateEntryNo}"/>
+
+                <!-- Static or calculated -->
+                <Text text="IN"/>
+
                 <Text text="{VehicleNumber}"/>
-                <Text text="{path: 'ChallanDate', formatter: '.formatDate'}"/>
+                <Text text="{VendorName}"/>
+
+                <Text text="{path: 'CreatedAt', formatter: '.formatDateTime'}"/>
+
             </cells>
+
         </ColumnListItem>
     </items>
 
 </Table>
+<Dialog id="moreOptionDialog"
+    title="More Option"
+    class="sapUiContentPadding"
+    stretchOnPhone="true">
 
+    <customHeader>
+        <Bar>
+            <contentLeft>
+                <Text text="More Option"/>
+            </contentLeft>
+            <contentRight>
+                <Button icon="sap-icon://decline"
+                        type="Reject"
+                        press="onCloseDialog"/>
+            </contentRight>
+        </Bar>
+    </customHeader>
+
+    <content>
+
+        <VBox class="sapUiMediumMargin">
+
+            <HBox justifyContent="SpaceAround" class="sapUiSmallMarginBottom">
+                <Button text="EDIT" width="140px"/>
+                <Button text="PRINT" width="140px"/>
+            </HBox>
+
+            <HBox justifyContent="SpaceAround" class="sapUiSmallMarginBottom">
+                <Button text="WEIGHMENT" width="140px"/>
+                <Button text="CHANGE-LOG" width="140px"/>
+            </HBox>
+
+            <HBox justifyContent="SpaceAround" class="sapUiSmallMarginBottom">
+                <Button text="OUT" width="140px"/>
+                <Button text="CANCEL" width="140px"/>
+            </HBox>
+
+            <HBox justifyContent="SpaceAround">
+                <Button text="ALL-WEIGHMENT" width="140px"/>
+                <Button text="DELIVERY-CHALLAN" width="140px"/>
+            </HBox>
+
+        </VBox>
+
+    </content>
+
+</Dialog>
+
+<Dialog id="printDialog"
+    stretch="true"
+    class="sapUiContentPadding">
+
+    <customHeader>
+        <Bar>
+            <contentLeft>
+                <Button text="PRINT" type="Emphasized" press="onPrintNow"/>
+            </contentLeft>
+            <contentRight>
+                <Button text="X" type="Reject" press="onClosePrint"/>
+            </contentRight>
+        </Bar>
+    </customHeader>
+
+    <content>
+
+        <!-- PRINT AREA -->
+        <VBox id="printArea" class="sapUiSmallMargin">
+
+            <!-- HEADER -->
+            <VBox alignItems="Center" class="sapUiSmallMarginBottom">
+                <Text text="ATMASTCO UNIT-1" class="sapUiLargeMarginBottom sapMTitle"/>
+                <Text text="157-158, Light Industrial Area, Bhilai – 490026, Dist. Durg (C.G.)"/>
+            </VBox>
+
+            <HBox justifyContent="SpaceBetween" class="sapUiSmallMarginBottom">
+                <Text text="GATE PASS" class="sapMTitle"/>
+                <Text text="|||||||||||||||||||||||||||||" />
+            </HBox>
+
+            <!-- DETAILS -->
+            <HBox justifyContent="SpaceBetween">
+
+                <!-- LEFT -->
+                <VBox width="48%">
+                    <Text text="Vehicle No : {print>VehicleNumber}"/>
+                    <Text text="Party Name : {print>VendorName}"/>
+                    <Text text="Challan No : {print>ChallanNo}"/>
+                    <Text text="Challan Date : {print>ChallanDate}"/>
+                    <Text text="Gross Wt : {print>ChallanGrossWt}"/>
+                    <Text text="Tare Wt : {print>ChallanTareWt}"/>
+                    <Text text="Net Wt : {print>ChallanNetWt}"/>
+                </VBox>
+
+                <!-- RIGHT -->
+                <VBox width="48%">
+                    <Text text="Gate Entry No : {print>GateEntryNo}"/>
+                    <Text text="In Time : {print>CreatedAt}"/>
+                    <Text text="Order No : {print>PurchaseOrderNo}"/>
+                    <Text text="Transporter : {print>TransporterName}"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- ITEM TABLE -->
+            <Table items="{print>Items}" class="sapUiSmallMarginTop">
+
+                <columns>
+                    <Column><Text text="S.NO"/></Column>
+                    <Column><Text text="Item Details"/></Column>
+                    <Column><Text text="Qty"/></Column>
+                    <Column><Text text="UOM"/></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{print>SNo}"/>
+                            <Text text="{print>MaterialDesc}"/>
+                            <Text text="{print>Quantity}"/>
+                            <Text text="{print>Uom}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </VBox>
+
+    </content>
+</Dialog>
         </content>
 
     </Page>

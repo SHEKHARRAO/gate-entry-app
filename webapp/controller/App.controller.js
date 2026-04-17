@@ -20,6 +20,10 @@ onNavToWeighment: function () {
 },
 onNavToRGPReport: function () {
     this.getOwnerComponent().getRouter().navTo("RouteRGPReport");
+},
+onNavToUserMaster: function () {
+    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+    oRouter.navTo("UserMaster");
 }
 
     });

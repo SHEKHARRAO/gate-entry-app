@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+# yaml-language-server: $schema=https://github.io
 
 specVersion: "4.0"
 metadata:
@@ -9,14 +9,23 @@ server:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertErrors: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        ignoreCertErrors: true
         ui5:
           path:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
         backend:
-          - authenticationType: reentranceTicket # SAML support for vscode
+          # 1. Purchase Order Service (OData V4)
+          - path: /sap/opu/odata4/sap/api_purchaseorder_2
+            url: https://my418935-api.s4hana.cloud.sap
+            
+          # 2. Outbound Delivery Service (OData V2)
+          - path: /sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV
+            url: https://my418935-api.s4hana.cloud.sap
+
+          # 3. Main ABAP Trial Service
+          - authenticationType: reentranceTicket
             path: /sap
             url: https://7a456f9d-5fc0-4e0c-b7a7-81e65d431356.abap.us10.hana.ondemand.com
             destination: abap-cloud-abap_cli-6fb124datrial-dev

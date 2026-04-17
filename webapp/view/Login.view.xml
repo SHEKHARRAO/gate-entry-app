@@ -1,0 +1,41 @@
+<mvc:View
+    controllerName="gateentry.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page showHeader="false">
+
+        <VBox class="loginContainer">
+
+            <VBox class="loginBox">
+
+                <!-- LOGO + TITLE -->
+                <VBox class="loginHeader">
+                    <Image src="img/GATEENTRY3.png" width="60px"/>
+                    <Text text="Geschaft PVT.Limited" class="loginTitle"/>
+                    <Text text="Engineering With Excellence" class="loginSubTitle"/>
+                </VBox>
+
+                <!-- FORM -->
+                <VBox class="loginForm">
+
+                    <Label text="User ID :" class="loginLabel"/>
+                    <Input id="loginUser" class="loginInput"/>
+
+                    <Label text="Password" class="loginLabel"/>
+                    <Input id="loginPass" type="Password" class="loginInput"/>
+
+                    <Button text="Login"
+                        type="Emphasized"
+                        width="100%"
+
+                        press="onLogin"
+                        class="loginButton"/>
+                </VBox>
+
+            </VBox>
+
+        </VBox>
+
+    </Page>
+</mvc:View>
